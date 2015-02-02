@@ -6,6 +6,8 @@ __Currently under development.__
 
 Extract style values from the CSS background property shorthand.
 
+<https://developer.mozilla.org/en-US/docs/Web/CSS/background>
+
 ## Installation
 
 ```bash

@@ -9,8 +9,9 @@ describe('css-background', function() {
 
   it('should parse a value with color, image, repeat and position specified', function() {
     assert.deepEqual(
-      cssBackground('#ffffff url("img_tree.png") no-repeat right top'),
+      cssBackground('scroll content-box #ffffff url("img_tree.png") no-repeat right top'),
       {
+        clip: 'content-box',
         color: '#ffffff',
         image: 'url("img_tree.png")',
         repeat: 'no-repeat',
