@@ -3,32 +3,16 @@ var cssBackground = require('..');
 
 describe('css-background', function() {
 
-  it('should parse single colors', function() {
-    assert.deepEqual(cssBackground('green'), { color: 'green' });
-  });
-
-  it('should parse a value with color, image, repeat and position specified', function() {
+  it('should parse a value with attachment, color, image, clip, and repeat specified', function() {
     assert.deepEqual(
-      cssBackground('scroll content-box #ffffff url("img_tree.png") no-repeat right top'),
+      cssBackground('url("img_tree.png") scroll content-box repeat round #ffffff'),
       {
+        attachment: 'scroll',
         clip: 'content-box',
         color: '#ffffff',
         image: 'url("img_tree.png")',
-        repeat: 'no-repeat',
-        position: 'right top'
+        repeat: 'repeat round'
       }
-    );
-  });
-
-  it('should parse a value with an image, repeat, and attachment', function() {
-    assert.deepEqual(
-      cssBackground('url("topbanner.png") #00D repeat-y fixed'),
-      {
-        image: 'url("topbanner.png")',
-        color: '#00D',
-        repeat: 'repeat-y',
-        attachement: 'fixed'
-      }
-    );
-  });
-});
+    )
+  })
+})
